@@ -1,5 +1,5 @@
 import createItem from "./services/item.js"
-import { addItem, calculateTotal, deleteItem, removeItem } from "./services/cart.js"
+import { addItem, calculateTotal, deleteItem, displayCart, removeItem } from "./services/cart.js"
 
 const myCart = []
 const myWhishList = []
@@ -11,8 +11,8 @@ const item2 = await createItem("figure-action B", 90.50, 1)
 
 await addItem(myCart, item1)
 await addItem(myCart, item2)
+await displayCart(myCart)
 
-await deleteItem(myCart, item2.name)
+// await deleteItem(myCart, item2.name)
 
-console.log("Total do carrinho de compras é: ")
 await calculateTotal(myCart)

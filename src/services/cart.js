@@ -3,6 +3,7 @@ async function addItem(userCart, item) {
 }
 
 async function calculateTotal(userCart) {
+  console.log("\nTotal do carrinho de compras é: ")
   console.log(userCart.reduce((total, item) => total + item.subtotal(), 0))
 }
 
@@ -14,6 +15,15 @@ async function deleteItem(userCart, name) {
   }
 }
 
-async function removeItem(userCart, index) {}
+async function removeItem(userCart, index) {
 
-export {addItem, calculateTotal, deleteItem, removeItem}
+}
+
+async function displayCart(userCart) {
+  console.log("\nShopee cart list:")
+  userCart.forEach((item, index) => {
+    console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity} | Subtotal: ${item.subtotal()}`)
+  });
+}
+
+export {addItem, calculateTotal, deleteItem, removeItem, displayCart}
